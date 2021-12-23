@@ -1,7 +1,10 @@
 {
   "name": "@digshare/awesome-channel",
-  "main": "out/index.js",
   "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
   "files": [
     "out"
   ],
@@ -9,7 +12,7 @@
     "runtime": "nodejs14"
   },
   "scripts": {
-    "dev-run": "cross-env DIGSHARE_ENV=development ts-node src/@run.ts",
+    "dev-run": "cross-env DIGSHARE_ENV=development dev-run.js",
     "prepublishOnly": "yarn build",
     "build": "yarn ts-build && yarn dss-pack",
     "ts-build": "rimraf ./bld && tsc --build",
